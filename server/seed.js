@@ -8,22 +8,15 @@ const generateUsers = () => {
   let users = [];
 
   for (let i = 0; i <= 100; i++) {
-    let reviewName = faker.name.firstName();
-    let reviewDate = faker.date.past();
-    let reviewRating = faker.random.number({ 'min': 0, 'max': 5 });
-    let reviewDescription = faker.lorem.paragraph();
-    let internet = faker.internet.url();
-    let reviewImageUrl = faker.image.imageUrl();
-    let reviewRecommend = faker.random.number({ 'min': 1, 'max': 500 });
 
     let review = new Review({
-        name: reviewName,
-        data: reviewDate,
-        rating: reviewRating,
-        description: reviewDescription,
-        productUrl: internet,
-        imageUrl: reviewImageUrl,
-        recommended: reviewRecommend
+        name: faker.name.firstName(),
+        data: faker.date.past(),
+        rating: faker.random.number({ 'min': 0, 'max': 5 }),
+        description: faker.lorem.paragraph(),
+        productUrl: faker.internet.url(),
+        imageUrl: faker.image.imageUrl(),
+        recommended: faker.random.number({ 'min': 1, 'max': 500 })
     })
 
     review.save((err) => {
