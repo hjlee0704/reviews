@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose
+const db = mongoose
   .connect('mongodb://localhost:27017/reviewDB', { useUnifiedTopology: true, useNewUrlParser: true })
   .then(() => console.log('Successfully connected to mongodb database on port 27017'))
   .catch((err) => console.log(err))
@@ -17,4 +17,4 @@ const reviewSchema = new mongoose.Schema({
 
 const Review = mongoose.model('Review', reviewSchema);
 
-module.exports = { Review }
+module.exports = { Review, db }
