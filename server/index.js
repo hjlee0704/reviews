@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 
-const Review = require('../database').Review
+const Review = require('../database/index.js').Review
 
 let app = express();
 let port = 3000;
