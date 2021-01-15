@@ -6,13 +6,19 @@ const db = mongoose
   .catch((err) => console.log(err))
 
 const reviewSchema = new mongoose.Schema({
-  name: String,
-  date: String,
-  rating: Number,
-  description: String,
-  productUrl: String,
-  imageUrl: String,
-  recommended: Number
+  _id: Number,
+  productReviews: [
+    {
+      _id: Number,
+      name: String,
+      date: String,
+      rating: Number,
+      description: String,
+      avatar: String,
+      imageUrl: String,
+      recommended: Number
+    }
+  ]
 })
 
 const Review = mongoose.model('Review', reviewSchema);
