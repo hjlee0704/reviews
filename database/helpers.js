@@ -24,7 +24,7 @@ const generateRandomObjects = () => {
       data: faker.date.past(),
       rating: faker.random.number({ 'min': 0, 'max': 5 }),
       description: faker.lorem.paragraph(),
-      avatar: faker.image.avatar(),
+      avatar: faker.image.people(),
       imageUrl: faker.image.imageUrl(),
       recommended: faker.random.number({ 'min': 1, 'max': 500 })
     })
