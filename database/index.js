@@ -7,18 +7,20 @@ const db = mongoose
 
 const reviewSchema = new mongoose.Schema({
   _id: Number,
-  productReviews: [
+  shopReviews: [
     {
       _id: Number,
+      avatar: String,
       name: String,
       date: String,
       rating: Number,
       description: String,
-      avatar: String,
       imageUrl: String,
-      recommended: Number
-    }
-  ]
+      recommended: Number,
+    },
+  ],
+  total: Number,
+  average: Number
 })
 
 const Review = mongoose.model('Review', reviewSchema);

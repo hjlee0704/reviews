@@ -7,8 +7,12 @@ const generateReviews = () => {
 
     let review = {
       _id: i,
-      productReviews: generateRandomObjects()
+      shopReviews: generateRandomObjects(),
     }
+    console.log(review.shopReviews)
+    review['total'] = getTotal(review.shopReviews);
+    review['average'] = getAverage(review.shopReviews);
+
     reviews.push(review)
   }
   return reviews;
@@ -30,6 +34,14 @@ const generateRandomObjects = () => {
     })
   }
   return reviews;
+}
+
+const getTotal = (shopReviews) => {
+  return shopReviews.length;
+}
+
+const getAverage = (shopReviews) => {
+  return Math.floor(shopReviews.length / 4)
 }
 
 module.exports = generateReviews;
