@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div>
+  <span>
+    0
+  </span>
+   Reviews
+  <ReviewList
+    reviews={Array []}
+  />
+  <div>
+    <button>
+      1
+    </button>
+    <button>
+      2
+    </button>
+    <button>
+      3
+    </button>
+    <button>
+      4
+    </button>
+  </div>
+</div>
+`;

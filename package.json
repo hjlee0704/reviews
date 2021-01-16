@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --testEnvironment=node",
+    "test": "jest --verbose",
     "start": "nodemon server/index.js",
     "watch": "webpack",
     "seed": "node database/seed.js"
@@ -41,13 +41,21 @@
     "babel-loader": "^8.2.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
+    "enzyme-to-json": "^3.6.1",
     "eslint": "^7.17.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "parcel-bundler": "^1.12.4",
     "webpack": "^5.14.0",
     "webpack-cli": "^4.3.1"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>client/setupTests.js"
+    ],
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   }
 }
