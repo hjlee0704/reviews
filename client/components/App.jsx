@@ -9,8 +9,8 @@ class App extends Component {
 
     this.state = {
       reviews: [],
-      average: null,
-      total: null
+      start: 0,
+      end: 4
     }
     this.getReviews = this.getReviews.bind(this);
     this.getRandomItem = this.getRandomItem.bind(this);
@@ -25,7 +25,11 @@ class App extends Component {
       .then((response) => {
         const items = response.data;
         const reviews = this.getRandomItem(items);
-        this.setState({ reviews: reviews.shopReviews })
+        this.setState({
+          reviews: reviews.shopReviews,
+          average: reviews.average,
+          total: reviews.total
+        })
       })
   }
 
