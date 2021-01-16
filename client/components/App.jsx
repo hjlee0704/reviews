@@ -43,7 +43,7 @@ class App extends Component {
     let fourReviews = this.state.reviews.slice(this.state.start, this.state.end)
     return (
       <div>
-        100 Reviews
+        <span>{ this.state.reviews.length }</span> Reviews
         <ReviewList reviews={ fourReviews } />
         <button>1</button>
         <button>2</button>
