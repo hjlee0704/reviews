@@ -19,7 +19,7 @@ const generateReviews = () => {
 
 const generateRandomObjects = () => {
   const reviews = [];
-  const randomNum = Math.floor(Math.random() * 20) + 1;
+  const randomNum = Math.floor(Math.random() * (20 - 10 + 1) + 10)
   for (let i = 0; i < randomNum; i++) {
     reviews.push({
       _id: i,
