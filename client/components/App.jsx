@@ -9,10 +9,11 @@ class App extends Component {
 
     this.state = {
       reviews: [],
-      start: 0,
-      end: 4
+      average: null,
+      total: null
     }
-    this.getReviews = this.getReviews.bind(this)
+    this.getReviews = this.getReviews.bind(this);
+    this.getRandomItem = this.getRandomItem.bind(this);
   }
 
   componentDidMount() {
@@ -22,8 +23,16 @@ class App extends Component {
   getReviews() {
     axios.get('/api/reviews')
       .then((response) => {
-        this.setState({ reviews: response.data })
+        const items = response.data;
+        const reviews = this.getRandomItem(items);
+        this.setState({ reviews: reviews.shopReviews })
       })
+  }
+
+  getRandomItem(shopReviewArray) {
+    return shopReviewArray[
+      Math.floor(Math.random() * shopReviewArray.length)
+    ];
   }
 
   render() {
