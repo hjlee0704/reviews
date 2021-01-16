@@ -24,7 +24,7 @@ const generateRandomObjects = () => {
     reviews.push({
       _id: i,
       name: faker.name.firstName(),
-      data: faker.date.past(),
+      date: faker.date.past(),
       rating: faker.random.number({ 'min': 0, 'max': 5 }),
       description: faker.lorem.paragraph(),
       avatar: faker.random.image(),

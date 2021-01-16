@@ -45,10 +45,12 @@ class App extends Component {
       <div>
         <span>{ this.state.reviews.length }</span> Reviews
         <ReviewList reviews={ fourReviews } />
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>4</button>
+        <div>
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+        </div>
       </div>
     )
   }
