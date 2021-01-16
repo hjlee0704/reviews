@@ -9,7 +9,6 @@ const generateReviews = () => {
       _id: i,
       shopReviews: generateRandomObjects(),
     }
-    console.log(review.shopReviews)
     review['total'] = getTotal(review.shopReviews);
     review['average'] = getAverage(review.shopReviews);
 
@@ -28,8 +27,8 @@ const generateRandomObjects = () => {
       data: faker.date.past(),
       rating: faker.random.number({ 'min': 0, 'max': 5 }),
       description: faker.lorem.paragraph(),
-      avatar: faker.image.people(),
-      imageUrl: faker.image.imageUrl(),
+      avatar: faker.random.image(),
+      imageUrl: faker.random.image(),
       recommended: faker.random.number({ 'min': 1, 'max': 500 })
     })
   }
