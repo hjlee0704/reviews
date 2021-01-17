@@ -3,21 +3,21 @@ import moment from 'moment';
 
 const ReviewList = ({ reviews }) => {
   const reviewList = reviews.map(review => (
-    <div key={ review._id } className="reviewList-container">
+    <div key={ review._id } className="reviews-container">
       <img src={ review.avatar } />
       <a href="#">{ review.name }</a>
       <span>{ moment(review.date).format('ll') }</span>
-      <p>{ review.rating }</p>
+      <p id="rating">{ review.rating }</p>
       <div className="description-container">
         <p>{ review.description }</p>
       </div>
       <img src={ review.imageUrl } />
-      <p>Purchased Item:</p>
+      <p id="purchased">Purchased Item:</p>
       <a href="#">Buddha | Shoe Charms | Shoe Decor | Crok Charms | Christmas</a>
     </div>
   ))
   return (
-    <div>
+    <div className="reviewList-container">
       { reviewList }
     </div>
   )
