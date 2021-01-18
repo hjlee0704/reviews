@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Pagination = ({ reviewsPerPage, totalReviews, paginate, currentPage, average }) => {
+const Pagination = ({ reviewsPerPage, totalReviews, paginate, currentPage, average, incrementPage, decrementPage }) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalReviews / reviewsPerPage); i += 1) {
@@ -19,7 +19,7 @@ const Pagination = ({ reviewsPerPage, totalReviews, paginate, currentPage, avera
     <div>
       <ul>
         <li>
-          <a href="!#" className={currentPage !== 1 ? 'arrows' : 'disabled'}>
+          <a href="!#" className={currentPage !== 1 ? 'arrows' : 'disabled'} onClick={decrementPage}>
             <img src="imgs/leftArrow.png" className="arrows" />
             {/* <i class="fas fa-arrow-left"></i> */}
           </a>
@@ -30,8 +30,8 @@ const Pagination = ({ reviewsPerPage, totalReviews, paginate, currentPage, avera
       </ul>
       <ul>
         <li>
-          <a href="!#" className={currentPage !== average + 1 ? 'arrows' : 'disabled'}>
-          <img src="imgs/rightArrow.png" className="arrows" />
+          <a href="!#" className={currentPage !== average + 1 ? 'arrows' : 'disabled'} onClick={incrementPage}>
+          <img src="imgs/rightArrow.png" className="arrows" alt="#"/>
           </a>
         </li>
       </ul>

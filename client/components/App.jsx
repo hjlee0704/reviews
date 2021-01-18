@@ -19,6 +19,8 @@ class App extends Component {
     };
     this.getReviews = this.getReviews.bind(this);
     this.paginate = this.paginate.bind(this);
+    this.incrementPage = this.incrementPage.bind(this);
+    this.decrementPage = this.decrementPage.bind(this);
   }
 
   componentDidMount() {
@@ -41,6 +43,22 @@ class App extends Component {
   paginate(e, pageNum) {
     e.preventDefault();
     this.setState({ currentPage: pageNum });
+  }
+
+  incrementPage(e) {
+    e.preventDefault();
+    const { currentPage, reviews } = this.state;
+    if (currentPage < reviews.length) {
+      this.setState({ currentPage: currentPage + 1 });
+    }
+  }
+
+  decrementPage(e) {
+    e.preventDefault();
+    const { currentPage, reviews } = this.state;
+    if (currentPage > 1) {
+      this.setState({ currentPage: currentPage - 1 });
+    }
   }
 
   render() {
@@ -66,6 +84,8 @@ class App extends Component {
             reviewsPerPage={reviewsPerPage}
             totalReviews={reviews.length}
             paginate={this.paginate}
+            incrementPage={this.incrementPage}
+            decrementPage={this.decrementPage}
             currentPage={currentPage}
             average={average}
           />
