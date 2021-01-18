@@ -2,7 +2,7 @@ const faker = require('faker');
 
 const generateRandomObjects = () => {
   const reviews = [];
-  const randomNum = Math.floor(Math.random() * (20 - 10 + 1) + 10);
+  const randomNum = Math.floor(Math.random() * (50 - 10 + 1) + 10);
   for (let i = 0; i < randomNum; i += 1) {
     reviews.push({
       _id: i + 1,

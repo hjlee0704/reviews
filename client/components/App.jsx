@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import getRandomItem from '../helpers/helpers.js';
 import ReviewList from './ReviewList';
-import Buttons from './Buttons';
+import Pagination from './Pagination';
 
 class App extends Component {
   constructor(props) {
@@ -13,16 +13,19 @@ class App extends Component {
 
     this.state = {
       reviews: [],
-      start: 0,
-      end: 4,
-      average: 0,
-      counter: 0,
+      currentPage: 1,
+      reviewsPerPage: 4,
     };
     this.getReviews = this.getReviews.bind(this);
+    this.onSelectPage = this.onSelectPage.bind(this);
   }
 
   componentDidMount() {
     this.getReviews();
+  }
+
+  onSelectPage(page) {
+
   }
 
   getReviews() {
@@ -30,24 +33,33 @@ class App extends Component {
       .then((response) => {
         const items = response.data;
         const reviews = getRandomItem(items);
+        console.log(reviews.shopReviews);
         this.setState({
           reviews: reviews.shopReviews,
-          average: reviews.average,
         });
       });
   }
 
   render() {
-    const { reviews, start, end, counter, average } = this.state;
-    const fourReviews = reviews.slice(start, end);
-    console.log(fourReviews);
+    const { reviews, currentPage, reviewsPerPage } = this.state;
+    const indexOfLastReview = currentPage * reviewsPerPage;
+    const indexOfFirstReview = indexOfLastReview - reviewsPerPage;
+    const currentReviews = reviews.slice(indexOfFirstReview, indexOfLastReview);
+    // let fourReviews;
+    // const { reviews, start, end, average, isLastPage } = this.state;
+    // if (isLastPage) {
+    //   fourReviews = reviews.slice(end);
+    // } else {
+    //   fourReviews = reviews.slice(start, end);
+    // }
+
     return (
       <div>
         <span>{reviews.length}</span>
         Reviews
-        <ReviewList reviews={fourReviews} />
+        <ReviewList reviews={currentReviews} />
         <div>
-          <Buttons counter={counter} average={average} />
+          <Pagination reviewsPerPage={reviewsPerPage} totalReviews={reviews.length} />
         </div>
       </div>
     );
