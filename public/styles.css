@@ -1,4 +1,88 @@
-img {
-  width: 100px;
-  height: 100px;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Merriweather', serif;
+}
+
+.reviews-container {
+  border: 1px solid #bbb;
+  width: 50%;
+  height: 275px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+/* Avatar image */
+.reviews-container img:nth-child(1) {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* Avatar image */
+.reviews-container img:nth-child(1) {
+  float: left;
+  margin-left: 10px;
+}
+
+/* user name */
+.reviews-container a:nth-child(2) {
+  font-size: 10px;
+}
+
+/* date */
+.reviews-container span:nth-child(3) {
+  margin-left: 5px;
+  font-size: 10px;
+}
+
+/* maybe */
+.description-container p {
+  display: inline-block;
+  font-size: 12px;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.description-container {
+  position: absolute;
+  left: 40px;
+  display: inline-block;
+  width: 40%;
+}
+
+.reviews-container img:nth-child(6) {
+  position: absolute;
+  left: 500px;
+  margin-left: 150px;
+  width: 175px;
+  height: 175px;
+}
+
+/* rating */
+.reviews-container p:nth-child(4) {
+  width: 1%;
+  margin-left: 37px;
+}
+
+.reviews-container p:nth-child(7) {
+  position: absolute;
+  font-size: 12px;
+  top: 200px;
+  left: 40px;
+}
+
+.reviews-container a:nth-child(8) {
+  position: absolute;
+  font-size: 12px;
+  top: 230px;
+  left: 40px;
+}
+
+.text-wrapper {
+  display: inline-block;
+  width: 50%;
 }

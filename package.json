@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --testEnvironment=node",
+    "test": "jest --verbose",
     "start": "nodemon server/index.js",
     "watch": "webpack",
     "seed": "node database/seed.js"
@@ -21,10 +21,14 @@
   "homepage": "https://github.com/Chill-Crocs/ratings-service#readme",
   "dependencies": {
     "axios": "^0.21.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
     "express": "^4.17.1",
     "faker": "^5.1.0",
     "jest": "^26.6.3",
+    "moment": "^2.29.1",
     "mongoose": "^5.11.11",
+    "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0"
   },
@@ -38,15 +42,23 @@
     "babel-core": "^6.26.3",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.5",
+    "enzyme-to-json": "^3.6.1",
     "eslint": "^7.17.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "parcel-bundler": "^1.12.4",
     "webpack": "^5.14.0",
     "webpack-cli": "^4.3.1"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>client/setupTests.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }

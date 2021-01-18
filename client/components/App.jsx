@@ -1,7 +1,10 @@
+/* eslint-disable no-console */
 import React, { Component } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
-import ReviewList from './ReviewList'
+import getRandomItem from '../helpers/helpers.js';
+import ReviewList from './ReviewList';
 
 class App extends Component {
   constructor(props) {
@@ -10,9 +13,9 @@ class App extends Component {
     this.state = {
       reviews: [],
       start: 0,
-      end: 4
-    }
-    this.getReviews = this.getReviews.bind(this)
+      end: 4,
+    };
+    this.getReviews = this.getReviews.bind(this);
   }
 
   componentDidMount() {
@@ -22,23 +25,36 @@ class App extends Component {
   getReviews() {
     axios.get('/api/reviews')
       .then((response) => {
-        this.setState({ reviews: response.data })
-      })
+        const items = response.data;
+        const reviews = getRandomItem(items);
+        this.setState({
+          reviews: reviews.shopReviews,
+        });
+      });
   }
 
   render() {
-    let fourReviews = this.state.reviews.slice(this.state.start, this.state.end)
+    const { reviews, start, end } = this.state;
+    const fourReviews = reviews.slice(start, end);
+    console.log(fourReviews);
     return (
       <div>
-        100 Reviews
-        <ReviewList reviews={ fourReviews } />
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>4</button>
+        <span>{reviews.length}</span>
+        Reviews
+        <ReviewList reviews={fourReviews} />
+        <div>
+          <button type="button">1</button>
+          <button type="button">2</button>
+          <button type="button">3</button>
+          <button type="button">4</button>
+        </div>
       </div>
-    )
+    );
   }
 }
+
+App.defaultProps = {
+  reviews: PropTypes.string,
+};
 
 export default App;

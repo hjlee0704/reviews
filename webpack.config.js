@@ -16,16 +16,16 @@ module.exports = {
           options: {
             presets: [
               ['@babel/preset-env'],
-            ["@babel/preset-react"]
-            ]
-          }
-        }
-      }
-    ]
+              ['@babel/preset-react'],
+            ],
+          },
+        },
+      },
+    ],
   },
   mode: 'development',
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
   },
-  watch: true
+  watch: true,
 };
