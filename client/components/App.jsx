@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 import getRandomItem from '../helpers/helpers.js';
 import ReviewList from './ReviewList';
+import Buttons from './Buttons';
 
 class App extends Component {
   constructor(props) {
@@ -14,6 +15,8 @@ class App extends Component {
       reviews: [],
       start: 0,
       end: 4,
+      average: 0,
+      counter: 0,
     };
     this.getReviews = this.getReviews.bind(this);
   }
@@ -29,12 +32,13 @@ class App extends Component {
         const reviews = getRandomItem(items);
         this.setState({
           reviews: reviews.shopReviews,
+          average: reviews.average,
         });
       });
   }
 
   render() {
-    const { reviews, start, end } = this.state;
+    const { reviews, start, end, counter, average } = this.state;
     const fourReviews = reviews.slice(start, end);
     console.log(fourReviews);
     return (
@@ -43,10 +47,7 @@ class App extends Component {
         Reviews
         <ReviewList reviews={fourReviews} />
         <div>
-          <button type="button">1</button>
-          <button type="button">2</button>
-          <button type="button">3</button>
-          <button type="button">4</button>
+          <Buttons counter={counter} average={average} />
         </div>
       </div>
     );

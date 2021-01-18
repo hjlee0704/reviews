@@ -5,7 +5,7 @@ const generateRandomObjects = () => {
   const randomNum = Math.floor(Math.random() * (20 - 10 + 1) + 10);
   for (let i = 0; i < randomNum; i += 1) {
     reviews.push({
-      _id: i,
+      _id: i + 1,
       name: faker.name.firstName(),
       date: faker.date.past(),
       rating: faker.random.number({ min: 0, max: 5 }),
