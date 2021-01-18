@@ -15,17 +15,14 @@ class App extends Component {
       reviews: [],
       currentPage: 1,
       reviewsPerPage: 4,
+      average: null,
     };
     this.getReviews = this.getReviews.bind(this);
-    this.onSelectPage = this.onSelectPage.bind(this);
+    this.paginate = this.paginate.bind(this);
   }
 
   componentDidMount() {
     this.getReviews();
-  }
-
-  onSelectPage(page) {
-
   }
 
   getReviews() {
@@ -36,12 +33,18 @@ class App extends Component {
         console.log(reviews.shopReviews);
         this.setState({
           reviews: reviews.shopReviews,
+          average: reviews.average,
         });
       });
   }
 
+  paginate(e, pageNum) {
+    e.preventDefault();
+    this.setState({ currentPage: pageNum });
+  }
+
   render() {
-    const { reviews, currentPage, reviewsPerPage } = this.state;
+    const { reviews, currentPage, reviewsPerPage, average } = this.state;
     const indexOfLastReview = currentPage * reviewsPerPage;
     const indexOfFirstReview = indexOfLastReview - reviewsPerPage;
     const currentReviews = reviews.slice(indexOfFirstReview, indexOfLastReview);
@@ -59,7 +62,13 @@ class App extends Component {
         Reviews
         <ReviewList reviews={currentReviews} />
         <div>
-          <Pagination reviewsPerPage={reviewsPerPage} totalReviews={reviews.length} />
+          <Pagination
+            reviewsPerPage={reviewsPerPage}
+            totalReviews={reviews.length}
+            paginate={this.paginate}
+            currentPage={currentPage}
+            average={average}
+          />
         </div>
       </div>
     );
