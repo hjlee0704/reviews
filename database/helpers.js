@@ -13,7 +13,7 @@ const generateRandomObjects = () => {
       avatar: faker.random.image(),
       imageUrl: faker.random.image(),
       recommended: faker.random.number({ min: 1, max: 500 }),
-      purchasedItem: faker.random.words(7) + '...',
+      purchasedItem: `${faker.random.words(7)}...`,
       shopImage: faker.image.business(),
     });
   }

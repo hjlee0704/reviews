@@ -4,32 +4,21 @@ exports[`App testing... matches snapshot 1`] = `
 <div>
   <span>
     0
+     shop reviews
   </span>
-  Reviews
   <ReviewList
     reviews={Array []}
   />
   <div>
-    <button
-      type="button"
-    >
-      1
-    </button>
-    <button
-      type="button"
-    >
-      2
-    </button>
-    <button
-      type="button"
-    >
-      3
-    </button>
-    <button
-      type="button"
-    >
-      4
-    </button>
+    <Pagination
+      average={null}
+      currentPage={1}
+      decrementPage={[Function]}
+      incrementPage={[Function]}
+      paginate={[Function]}
+      reviewsPerPage={4}
+      totalReviews={0}
+    />
   </div>
 </div>
 `;

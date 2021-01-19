@@ -36,8 +36,11 @@ class App extends Component {
         this.setState({
           reviews: reviews.shopReviews,
           average: reviews.average,
-        });
-      });
+        })
+      })
+      .catch((error) => {
+        console.log(error.response.data);
+      })
   }
 
   paginate(e, pageNum) {
@@ -47,18 +50,14 @@ class App extends Component {
 
   incrementPage(e) {
     e.preventDefault();
-    const { currentPage, reviews } = this.state;
-    if (currentPage < reviews.length) {
-      this.setState({ currentPage: currentPage + 1 });
-    }
+    const { currentPage } = this.state;
+    this.setState({ currentPage: currentPage + 1 });
   }
 
   decrementPage(e) {
     e.preventDefault();
     const { currentPage } = this.state;
-    if (currentPage > 1) {
-      this.setState({ currentPage: currentPage - 1 });
-    }
+    this.setState({ currentPage: currentPage - 1 });
   }
 
   render() {
