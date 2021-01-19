@@ -2,20 +2,24 @@ import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 
+import Rating from './Rating';
+
 const ReviewList = ({ reviews }) => {
   const reviewList = reviews.map((review) => (
     // eslint-disable-next-line no-underscore-dangle
     <div key={review._id} className="reviews-container">
       <img src={review.avatar} alt="http://www.dummy.com" />
-      <a href="http://dummy.com">{ review.name }</a>
+      <a href="http://dummy.com" className="customer-name">{ review.name }</a>
       <span>{ moment(review.date).format('ll') }</span>
-      <p id="rating">{ review.rating }</p>
+      <Rating rating={review.rating} />
+      {/* <p id="rating">{ review.rating }</p> */}
       <div className="description-container">
         <p>{ review.description }</p>
       </div>
       <img src={review.imageUrl} alt="http://www.dummy.com" />
       <p id="purchased">Purchased Item:</p>
-      <a href="http://dummy.com">Buddha | Shoe Charms | Shoe Decor | Crok Charms | Christmas</a>
+      <img src={review.shopImage} alt="http://www.dummy.com" className="purchased-img" />
+      <a href="http://dummy.com" className="customer-name">{review.purchasedItem}</a>
     </div>
   ));
   return (

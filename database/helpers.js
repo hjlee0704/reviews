@@ -8,11 +8,13 @@ const generateRandomObjects = () => {
       _id: i + 1,
       name: faker.name.firstName(),
       date: faker.date.past(),
-      rating: faker.random.number({ min: 0, max: 5 }),
+      rating: faker.random.number({ min: 1, max: 5 }),
       description: faker.lorem.paragraph(),
       avatar: faker.random.image(),
       imageUrl: faker.random.image(),
       recommended: faker.random.number({ min: 1, max: 500 }),
+      purchasedItem: faker.random.words(7) + '...',
+      shopImage: faker.image.business(),
     });
   }
   return reviews;

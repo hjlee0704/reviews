@@ -55,7 +55,7 @@ class App extends Component {
 
   decrementPage(e) {
     e.preventDefault();
-    const { currentPage, reviews } = this.state;
+    const { currentPage } = this.state;
     if (currentPage > 1) {
       this.setState({ currentPage: currentPage - 1 });
     }
@@ -76,8 +76,9 @@ class App extends Component {
 
     return (
       <div>
-        <span>{reviews.length}</span>
-        Reviews
+        <span>
+          {reviews.length} shop reviews
+        </span>
         <ReviewList reviews={currentReviews} />
         <div>
           <Pagination
