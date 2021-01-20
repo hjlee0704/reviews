@@ -1,8 +1,6 @@
 import { shallow } from 'enzyme';
 import toJSON from 'enzyme-to-json';
 import React from 'react';
-import '@babel/polyfill';
-import axios from 'axios';
 
 import App from '../components/App';
 

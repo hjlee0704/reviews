@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable no-console */
 import { shallow } from 'enzyme';
-import '@babel/polyfill';
 import React from 'react';
 import Pagination from '../components/Pagination';
 
@@ -10,8 +9,6 @@ const props = {
   incrementPage: jest.fn(),
   paginate: jest.fn(),
 };
-
-const e = { preventDefault: jest.fn() };
 
 const wrapper = shallow((<Pagination {...props} />));
 const incrementBtn = wrapper.find('#increment');
