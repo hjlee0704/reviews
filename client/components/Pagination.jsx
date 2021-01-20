@@ -18,7 +18,7 @@ const Pagination = ({
 
   const pages = pageNumbers.map((num) => (
     <li key={num}>
-      <a href="!#" id="numbers" className={currentPage === num ? 'disabled' : undefined} onClick={(e) => paginate(e, num)}>
+      <a href="!#" id="paginate" className={currentPage === num ? 'disabled' : undefined} onClick={(e) => paginate(e, num)}>
         {num}
       </a>
     </li>
@@ -38,7 +38,7 @@ const Pagination = ({
       </ul>
       <ul className="increment-link">
         <li>
-          <a href="!#" id="increment" className={currentPage !== average + 1 ? 'arrows' : 'disabled'} onClick={incrementPage}>
+          <a href="!#" id="increment" className={currentPage !== average + 1 ? 'arrows' : 'disabled'} onClick={(incrementPage)}>
             <img src="imgs/rightArrow.png" className="arrows" alt="arrow" />
           </a>
         </li>

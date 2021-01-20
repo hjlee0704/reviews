@@ -1,21 +1,28 @@
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable no-console */
 import { shallow } from 'enzyme';
+import '@babel/polyfill';
 import React from 'react';
-import App from '../components/App';
+import Pagination from '../components/Pagination';
 
-const wrapper = shallow((<App />));
-const wrapperInstance = wrapper.instance();
+const props = {
+  decrementPage: jest.fn(),
+  incrementPage: jest.fn(),
+  paginate: jest.fn(),
+};
+
 const e = { preventDefault: jest.fn() };
 
-describe('Pagination rendering...', () => {
-  test('Increases currentPage from 1 to 2, when button is clicked', () => {
-    wrapperInstance.incrementPage(e);
+const wrapper = shallow((<Pagination {...props} />));
+const incrementBtn = wrapper.find('#increment');
+const decrementBtn = wrapper.find('#decrement');
 
-    expect(wrapper.state('currentPage')).toBe(2);
-  });
-
-  test('Descreases currentPage from 2 to 1, when button is clicked', () => {
-    wrapperInstance.decrementPage(e);
-    expect(wrapper.state('currentPage')).toBe(1);
+describe('Behavior of buttons...', () => {
+  test('Should call all onClicks', () => {
+    expect(props.incrementPage).not.toHaveBeenCalled();
+    incrementBtn.simulate('click');
+    expect(props.incrementPage).toHaveBeenCalled();
+    decrementBtn.simulate('click');
+    expect(props.decrementPage).toHaveBeenCalled();
   });
 });
