@@ -4,15 +4,20 @@
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
+  font-family: 'Guardian-EgypTT'
 }
 
-/* HEADING */
+/* SHOP NUMBER ON HEADING */
 div span {
-  margin-left: 10px;
   font-size: 26px;
   font-weight: 400;
+  color: #383838;
+}
+
+#heading {
+  margin-left: 10px;
+  font-size: 28px;
+  font-weight: 300;
   color: #383838;
 }
 

@@ -29,7 +29,6 @@ const Pagination = ({
         <li>
           <a href="!#" id="decrement" className={currentPage !== 1 ? 'arrows' : 'disabled'} onClick={decrementPage}>
             <img src="imgs/leftArrow.png" className="arrows" alt="arrow" />
-            {/* <i class="fas fa-arrow-left"></i> */}
           </a>
         </li>
       </ul>

@@ -36,11 +36,11 @@ class App extends Component {
         this.setState({
           reviews: reviews.shopReviews,
           average: reviews.average,
-        })
+        });
       })
       .catch((error) => {
         console.log(error.response.data);
-      })
+      });
   }
 
   paginate(e, pageNum) {
@@ -65,18 +65,12 @@ class App extends Component {
     const indexOfLastReview = currentPage * reviewsPerPage;
     const indexOfFirstReview = indexOfLastReview - reviewsPerPage;
     const currentReviews = reviews.slice(indexOfFirstReview, indexOfLastReview);
-    // let fourReviews;
-    // const { reviews, start, end, average, isLastPage } = this.state;
-    // if (isLastPage) {
-    //   fourReviews = reviews.slice(end);
-    // } else {
-    //   fourReviews = reviews.slice(start, end);
-    // }
 
     return (
       <div>
         <span>
-          {reviews.length} shop reviews
+          {reviews.length}
+          <span id="heading">shop reviews</span>
         </span>
         <ReviewList reviews={currentReviews} />
         <div>
