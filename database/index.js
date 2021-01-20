@@ -18,6 +18,8 @@ const reviewSchema = new mongoose.Schema({
       description: String,
       imageUrl: String,
       recommended: Number,
+      purchasedItem: String,
+      shopImage: String,
     },
   ],
   total: Number,

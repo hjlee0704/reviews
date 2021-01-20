@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 import getRandomItem from '../helpers/helpers.js';
 import ReviewList from './ReviewList';
+import Pagination from './Pagination';
 
 class App extends Component {
   constructor(props) {
@@ -12,10 +13,14 @@ class App extends Component {
 
     this.state = {
       reviews: [],
-      start: 0,
-      end: 4,
+      currentPage: 1,
+      reviewsPerPage: 4,
+      average: null,
     };
     this.getReviews = this.getReviews.bind(this);
+    this.paginate = this.paginate.bind(this);
+    this.incrementPage = this.incrementPage.bind(this);
+    this.decrementPage = this.decrementPage.bind(this);
   }
 
   componentDidMount() {
@@ -27,26 +32,57 @@ class App extends Component {
       .then((response) => {
         const items = response.data;
         const reviews = getRandomItem(items);
+        console.log(reviews.shopReviews);
         this.setState({
           reviews: reviews.shopReviews,
+          average: reviews.average,
         });
+      })
+      .catch((error) => {
+        console.log(error.response.data);
       });
   }
 
+  paginate(e, pageNum) {
+    e.preventDefault();
+    this.setState({ currentPage: pageNum });
+  }
+
+  incrementPage(e) {
+    e.preventDefault();
+    const { currentPage } = this.state;
+    this.setState({ currentPage: currentPage + 1 });
+  }
+
+  decrementPage(e) {
+    e.preventDefault();
+    const { currentPage } = this.state;
+    this.setState({ currentPage: currentPage - 1 });
+  }
+
   render() {
-    const { reviews, start, end } = this.state;
-    const fourReviews = reviews.slice(start, end);
-    console.log(fourReviews);
+    const { reviews, currentPage, reviewsPerPage, average } = this.state;
+    const indexOfLastReview = currentPage * reviewsPerPage;
+    const indexOfFirstReview = indexOfLastReview - reviewsPerPage;
+    const currentReviews = reviews.slice(indexOfFirstReview, indexOfLastReview);
+
     return (
       <div>
-        <span>{reviews.length}</span>
-        Reviews
-        <ReviewList reviews={fourReviews} />
+        <span>
+          {reviews.length}
+          <span id="heading">shop reviews</span>
+        </span>
+        <ReviewList reviews={currentReviews} />
         <div>
-          <button type="button">1</button>
-          <button type="button">2</button>
-          <button type="button">3</button>
-          <button type="button">4</button>
+          <Pagination
+            reviewsPerPage={reviewsPerPage}
+            totalReviews={reviews.length}
+            paginate={this.paginate}
+            incrementPage={this.incrementPage}
+            decrementPage={this.decrementPage}
+            currentPage={currentPage}
+            average={average}
+          />
         </div>
       </div>
     );
