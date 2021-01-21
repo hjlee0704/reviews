@@ -7,6 +7,8 @@ class Dropdown extends Component {
 
     this.state = {
       displayMenu: false,
+      isNewestSelected: false,
+      isRecommendedSelected: true,
     };
 
     this.showMenu = this.showMenu.bind(this);
@@ -25,6 +27,11 @@ class Dropdown extends Component {
     e.preventDefault();
     const { onSortReviews } = this.props;
     onSortReviews(e.target.textContent);
+
+    this.setState((prevState) => ({
+      isNewestSelected: !prevState.isNewestSelected,
+      isRecommendedSelected: !prevState.isRecommendedSelected,
+    }));
   }
 
   hideMenu(e) {
@@ -35,12 +42,16 @@ class Dropdown extends Component {
   }
 
   render() {
-    const { displayMenu } = this.state;
+    const { displayMenu, isRecommendedSelected, isNewestSelected } = this.state;
+    const styles = {
+      backgroundColor: displayMenu ? 'transparent' : null,
+      transition: '.1s',
+    };
 
     return (
       <div className={displayMenu ? 'dropdown-container backgroundStyle removeBackground' : 'dropdown-container'}>
-        <button onClick={this.showMenu} type="button" id="dropdownBtn">
-          Sort by:  Recommended
+        <button onClick={this.showMenu} type="button" id="dropdownBtn" style={styles}>
+          Sort by:Recommended
           <i className="fas fa-sort-down" />
         </button>
         {
@@ -50,9 +61,9 @@ class Dropdown extends Component {
                 {/* <button className="dropdown" type="button">Recommended</button>
                 <button className="dropdown" type="button">Newest</button> */}
                 <a href="!#" className="recommended" onClick={this.sortReviews}>Recommended</a>
-                <i className="fas fa-check checkmark1" />
+                { isRecommendedSelected && <i className="fas fa-check checkmark1" /> }
                 <a href="!#" className="newest" onClick={this.sortReviews}>Newest</a>
-                <i className="fas fa-check checkmark2" />
+                { isNewestSelected && <i className="fas fa-check checkmark2" /> }
               </div>
             )
             : (

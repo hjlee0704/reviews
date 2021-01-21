@@ -177,10 +177,13 @@ li a:link {
 .dropdown-container {
   position: absolute;
   border-radius: 15px;
+  width: 9.5%;
   top: 15px;
   left: 650px;
   z-index: 999;
-  padding: 10px 10px 0;
+  padding: 7px;
+  padding-bottom: 1px;
+  padding-top: 0;
   background-color: #fff;
 }
 
@@ -190,14 +193,16 @@ li a:link {
   background-color: transparent;
   padding: 10px;
   transition: all .2s ease-in-out;
-  font-size: 13px;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: 'Guardian-EgypTT', sans-serif;
 }
 
 #dropdownBtn:hover {
   border-radius: 25px;
   background-color: #eee;
   padding: 10px;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 #dropdownBtn:focus {
@@ -211,9 +216,8 @@ li a:link {
   text-decoration: none;
   width: 100%;
   color: #111;
-  margin: 15px 5px;
-  padding: 3px;
-  font-size: 14px;
+  font-family: 'Guardian-EgypTT', sans-serif;
+  font-size: 12px;
 }
 
 .recommended:hover, .newest:hover {
@@ -228,6 +232,7 @@ i {
 
 /* Dependent on state */
 .backgroundStyle {
+  border: 1px solid rgba(44, 44, 44, 0.178);
   box-shadow: 0 4px 20px rgba(34, 34, 34, 0.15);
   transition: .3s;
 }
@@ -239,14 +244,28 @@ i {
 
 .checkmark1 {
   position: absolute;
-  top: 67px;
+  top: 50px;
   right: 20px;
-  font-size: 10px;
+  font-size: 9px;
 }
 
 .checkmark2 {
   position: absolute;
-  top: 104px;
+  top: 80px;
   right: 20px;
-  font-size: 10px;
+  font-size: 9px;
+}
+
+.newest {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.recommended {
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 15px;
 }
