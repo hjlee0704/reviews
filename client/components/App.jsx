@@ -22,16 +22,24 @@ class App extends Component {
     this.paginate = this.paginate.bind(this);
     this.incrementPage = this.incrementPage.bind(this);
     this.decrementPage = this.decrementPage.bind(this);
-    this.onSortNewest = this.onSortNewest.bind(this);
+    this.onSortReviews = this.onSortReviews.bind(this);
   }
 
   componentDidMount() {
     this.getReviews();
   }
 
-  onSortNewest() {
+  onSortReviews(sortQuery) {
+    console.log(sortQuery)
     const { reviews } = this.state;
-    const sorted = reviews.sort((a, b) => new Date(b.date) - new Date(a.date));
+    let sorted;
+    if (sortQuery === 'Newest') {
+      sorted = reviews.sort((a, b) => new Date(b.date) - new Date(a.date));
+    } else {
+      sorted = reviews.sort((a, b) => b.recommended - a.recommended);
+      console.log(sorted);
+    }
+
     this.setState({ reviews: sorted });
   }
 
@@ -80,7 +88,7 @@ class App extends Component {
           {reviews.length}
           <span id="heading">shop reviews</span>
         </span>
-        <Dropdown reviews={reviews} onSortNewest={this.onSortNewest} />
+        <Dropdown reviews={reviews} onSortReviews={this.onSortReviews} />
         <ReviewList reviews={currentReviews} />
         <div>
           <Pagination

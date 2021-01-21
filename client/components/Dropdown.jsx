@@ -10,7 +10,7 @@ class Dropdown extends Component {
     };
     this.showMenu = this.showMenu.bind(this);
     this.hideMenu = this.hideMenu.bind(this);
-    this.sortNewest = this.sortNewest.bind(this);
+    this.sortReviews = this.sortReviews.bind(this);
   }
 
   showMenu(e) {
@@ -20,9 +20,9 @@ class Dropdown extends Component {
     });
   }
 
-  sortNewest(e) {
+  sortReviews(e) {
     e.preventDefault();
-    this.props.onSortNewest()
+    this.props.onSortReviews(e.target.textContent)
   }
 
   hideMenu(e) {
@@ -47,9 +47,9 @@ class Dropdown extends Component {
               <div className="menu">
                 {/* <button className="dropdown" type="button">Recommended</button>
                 <button className="dropdown" type="button">Newest</button> */}
-                <a href="!#" className="recommended" onClick={this.sortRecommended}>Recommended</a>
+                <a href="!#" className="recommended" onClick={this.sortReviews}>Recommended</a>
                 <i className="fas fa-check checkmark1"></i>
-                <a href="!#" className="newest" onClick={this.sortNewest}>Newest</a>
+                <a href="!#" className="newest" onClick={this.sortReviews}>Newest</a>
                 <i className="fas fa-check checkmark2"></i>
               </div>
             )
