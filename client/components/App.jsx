@@ -6,7 +6,9 @@ import PropTypes from 'prop-types';
 import getRandomItem from '../helpers/helpers.js';
 import ReviewList from './ReviewList';
 import Pagination from './Pagination';
-
+import Dropdown from './Dropdown';
+import { shopId } from '../../database/helpers';
+console.log(shopId)
 class App extends Component {
   constructor(props) {
     super(props);
@@ -16,15 +18,30 @@ class App extends Component {
       currentPage: 1,
       reviewsPerPage: 4,
       average: null,
+      shopId: null,
     };
     this.getReviews = this.getReviews.bind(this);
     this.paginate = this.paginate.bind(this);
     this.incrementPage = this.incrementPage.bind(this);
     this.decrementPage = this.decrementPage.bind(this);
+    this.onSortNewest = this.onSortNewest.bind(this);
   }
 
   componentDidMount() {
     this.getReviews();
+  }
+
+  onSortNewest() {
+    const { shopId, reviews } = this.state;
+    axios.get('/api/reviews/sorted', {
+      params: {
+        shopId,
+        reviews,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+      })
   }
 
   getReviews() {
@@ -32,10 +49,12 @@ class App extends Component {
       .then((response) => {
         const items = response.data;
         const reviews = getRandomItem(items);
-        console.log(reviews.shopReviews);
+        console.log(items)
+        console.log(reviews)
         this.setState({
           reviews: reviews.shopReviews,
           average: reviews.average,
+          shopId: reviews._id,
         });
       })
       .catch((error) => {
@@ -67,11 +86,12 @@ class App extends Component {
     const currentReviews = reviews.slice(indexOfFirstReview, indexOfLastReview);
 
     return (
-      <div>
+      <div className="main-container">
         <span>
           {reviews.length}
           <span id="heading">shop reviews</span>
         </span>
+        <Dropdown reviews={reviews} onSortNewest={this.onSortNewest} />
         <ReviewList reviews={currentReviews} />
         <div>
           <Pagination
