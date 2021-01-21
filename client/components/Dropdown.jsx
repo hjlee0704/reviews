@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Dropdown extends Component {
   constructor(props) {
@@ -6,8 +7,8 @@ class Dropdown extends Component {
 
     this.state = {
       displayMenu: false,
-      active: 'recommended',
     };
+
     this.showMenu = this.showMenu.bind(this);
     this.hideMenu = this.hideMenu.bind(this);
     this.sortReviews = this.sortReviews.bind(this);
@@ -22,7 +23,8 @@ class Dropdown extends Component {
 
   sortReviews(e) {
     e.preventDefault();
-    this.props.onSortReviews(e.target.textContent)
+    const { onSortReviews } = this.props;
+    onSortReviews(e.target.textContent);
   }
 
   hideMenu(e) {
@@ -33,13 +35,13 @@ class Dropdown extends Component {
   }
 
   render() {
-    const { displayMenu, active } = this.state;
+    const { displayMenu } = this.state;
 
     return (
       <div className={displayMenu ? 'dropdown-container backgroundStyle removeBackground' : 'dropdown-container'}>
-        <button onClick={this.showMenu} type="button" className="dropdownBtn">
+        <button onClick={this.showMenu} type="button" id="dropdownBtn">
           Sort by:  Recommended
-          <i className="fas fa-sort-down"></i>
+          <i className="fas fa-sort-down" />
         </button>
         {
           displayMenu
@@ -48,9 +50,9 @@ class Dropdown extends Component {
                 {/* <button className="dropdown" type="button">Recommended</button>
                 <button className="dropdown" type="button">Newest</button> */}
                 <a href="!#" className="recommended" onClick={this.sortReviews}>Recommended</a>
-                <i className="fas fa-check checkmark1"></i>
+                <i className="fas fa-check checkmark1" />
                 <a href="!#" className="newest" onClick={this.sortReviews}>Newest</a>
-                <i className="fas fa-check checkmark2"></i>
+                <i className="fas fa-check checkmark2" />
               </div>
             )
             : (
@@ -61,5 +63,9 @@ class Dropdown extends Component {
     );
   }
 }
+
+Dropdown.propTypes = {
+  onSortReviews: PropTypes.func.isRequired,
+};
 
 export default Dropdown;

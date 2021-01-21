@@ -14,7 +14,7 @@ const wrapper = shallow((<Pagination {...props} />));
 const incrementBtn = wrapper.find('#increment');
 const decrementBtn = wrapper.find('#decrement');
 
-describe('Behavior of buttons...', () => {
+describe('Behavior of buttons on Pagination component...', () => {
   test('Should call all onClicks', () => {
     expect(props.incrementPage).not.toHaveBeenCalled();
     incrementBtn.simulate('click');

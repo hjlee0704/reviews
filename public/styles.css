@@ -184,7 +184,7 @@ li a:link {
   background-color: #fff;
 }
 
-.dropdownBtn {
+#dropdownBtn {
   border: none;
   border-radius: 25px;
   background-color: transparent;
@@ -193,14 +193,14 @@ li a:link {
   font-size: 13px;
 }
 
-.dropdownBtn:hover {
+#dropdownBtn:hover {
   border-radius: 25px;
   background-color: #eee;
   padding: 10px;
   font-size: 13px;
 }
 
-.dropdownBtn:focus {
+#dropdownBtn:focus {
   border: none !important;
   outline: none !important;
 }

@@ -30,7 +30,6 @@ class App extends Component {
   }
 
   onSortReviews(sortQuery) {
-    console.log(sortQuery)
     const { reviews } = this.state;
     let sorted;
     if (sortQuery === 'Newest') {
@@ -40,7 +39,7 @@ class App extends Component {
       console.log(sorted);
     }
 
-    this.setState({ reviews: sorted });
+    this.setState({ reviews: sorted, currentPage: 1 });
   }
 
   getReviews() {
@@ -61,17 +60,20 @@ class App extends Component {
 
   paginate(e, pageNum) {
     e.preventDefault();
+    window.scrollTo(0, 0);
     this.setState({ currentPage: pageNum });
   }
 
   incrementPage(e) {
     e.preventDefault();
+    window.scrollTo(0, 0);
     const { currentPage } = this.state;
     this.setState({ currentPage: currentPage + 1 });
   }
 
   decrementPage(e) {
     e.preventDefault();
+    window.scrollTo(0, 0);
     const { currentPage } = this.state;
     this.setState({ currentPage: currentPage - 1 });
   }

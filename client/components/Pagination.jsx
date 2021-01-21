@@ -23,6 +23,7 @@ const Pagination = ({
       </a>
     </li>
   ));
+
   return (
     <div className="pages-container">
       <ul>

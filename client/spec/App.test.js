@@ -19,7 +19,6 @@ describe('App testing...', () => {
 
   test('Increases currentPage from 1 to 2, when button is clicked', () => {
     wrapperInstance.incrementPage(e);
-
     expect(wrapper.state('currentPage')).toBe(2);
   });
 
