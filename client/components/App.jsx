@@ -7,8 +7,7 @@ import getRandomItem from '../helpers/helpers.js';
 import ReviewList from './ReviewList';
 import Pagination from './Pagination';
 import Dropdown from './Dropdown';
-import { shopId } from '../../database/helpers';
-console.log(shopId)
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -18,7 +17,6 @@ class App extends Component {
       currentPage: 1,
       reviewsPerPage: 4,
       average: null,
-      shopId: null,
     };
     this.getReviews = this.getReviews.bind(this);
     this.paginate = this.paginate.bind(this);
@@ -32,16 +30,9 @@ class App extends Component {
   }
 
   onSortNewest() {
-    const { shopId, reviews } = this.state;
-    axios.get('/api/reviews/sorted', {
-      params: {
-        shopId,
-        reviews,
-      },
-    })
-      .then((response) => {
-        console.log(response.data);
-      })
+    const { reviews } = this.state;
+    const sorted = reviews.sort((a, b) => new Date(b.date) - new Date(a.date));
+    this.setState({ reviews: sorted });
   }
 
   getReviews() {
@@ -49,12 +40,10 @@ class App extends Component {
       .then((response) => {
         const items = response.data;
         const reviews = getRandomItem(items);
-        console.log(items)
-        console.log(reviews)
+
         this.setState({
           reviews: reviews.shopReviews,
           average: reviews.average,
-          shopId: reviews._id,
         });
       })
       .catch((error) => {

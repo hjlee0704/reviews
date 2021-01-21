@@ -26,21 +26,21 @@ app.get('/api/reviews', (req, res) => {
 });
 
 // Get request to sort reviews by newest date
-app.get('/api/reviews/sorted', (req, res) => {
-  console.log('Getting reviews and sorting by date....');
-  const { shopId } = req.query;
-  console.log(shopId)
-  Review.aggregate([
-    { $sort: { 'shopReviews.rating': 1 } },
-  ]).exec((err, docs) => {
-    if (err) {
-      console.log(err);
-      res.sendStatus(500);
-    } else {
-      res.send(docs[shopId])
-    }
-  });
-});
+// app.get('/api/reviews/sorted', (req, res) => {
+//   console.log('Getting reviews and sorting by date....');
+//   const { shopId } = req.query;
+//   console.log(shopId)
+//   Review.aggregate([
+//     { $sort: { 'shopReviews.rating': -1 } },
+//   ]).exec((err, docs) => {
+//     if (err) {
+//       console.log(err);
+//       res.sendStatus(500);
+//     } else {
+//       res.send(docs[shopId])
+//     }
+//   });
+// });
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
