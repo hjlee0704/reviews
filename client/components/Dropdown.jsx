@@ -51,7 +51,7 @@ class Dropdown extends Component {
     return (
       <div className={displayMenu ? 'dropdown-container backgroundStyle removeBackground' : 'dropdown-container'}>
         <button onClick={this.showMenu} type="button" id="dropdownBtn" style={styles}>
-          Sort by:Recommended
+          { isRecommendedSelected ? 'Sort by:Recommended' : 'Sort by:Newest' }
           <i className="fas fa-sort-down" />
         </button>
         {

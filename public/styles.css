@@ -191,8 +191,9 @@ li a:link {
   border: none;
   border-radius: 25px;
   background-color: transparent;
+  color: #222222df;
   padding: 10px;
-  transition: all .2s ease-in-out;
+  transition: .2s;
   font-size: 12px;
   font-weight: bold;
   font-family: 'Guardian-EgypTT', sans-serif;
@@ -204,6 +205,8 @@ li a:link {
   padding: 10px;
   font-size: 12px;
 }
+
+
 
 #dropdownBtn:focus {
   border: none !important;
@@ -218,6 +221,7 @@ li a:link {
   color: #111;
   font-family: 'Guardian-EgypTT', sans-serif;
   font-size: 12px;
+  line-height: 2;
 }
 
 .recommended:hover, .newest:hover {
@@ -244,14 +248,14 @@ i {
 
 .checkmark1 {
   position: absolute;
-  top: 50px;
+  top: 55px;
   right: 20px;
   font-size: 9px;
 }
 
 .checkmark2 {
   position: absolute;
-  top: 80px;
+  top: 94px;
   right: 20px;
   font-size: 9px;
 }
