@@ -11,14 +11,19 @@ body {
 div span {
   font-size: 26px;
   font-weight: 400;
-  color: #383838;
+  color: #111111;
 }
 
 #heading {
   margin-left: 10px;
   font-size: 28px;
   font-weight: 300;
-  color: #383838;
+  color: #111111;
+}
+
+/* MAIN CONTAINER */
+.main-container {
+  position: relative;
 }
 
 /* REVIEW LIST CONTAINER */
@@ -75,7 +80,7 @@ div span {
 /* PRODUCT IMAGE*/
 .reviews-container img:nth-child(6) {
   position: absolute;
-  top: 60px;
+  top: 140px;
   left: 500px;
   margin-left: 150px;
   width: 170px;
@@ -165,5 +170,106 @@ li a:link {
   width: 33px;
   height: 33px;
   border-radius: 6px;
+}
 
+/* /////////////////////////////////////////////////// */
+/* DROPDOWN */
+.dropdown-container {
+  position: absolute;
+  border-radius: 15px;
+  width: 9.5%;
+  top: 15px;
+  left: 650px;
+  z-index: 999;
+  padding: 7px;
+  padding-bottom: 1px;
+  padding-top: 0;
+  background-color: #fff;
+}
+
+#dropdownBtn {
+  border: none;
+  border-radius: 25px;
+  background-color: transparent;
+  color: #222222df;
+  padding: 10px;
+  transition: .2s;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: 'Guardian-EgypTT', sans-serif;
+}
+
+#dropdownBtn:hover {
+  border-radius: 25px;
+  background-color: #eee;
+  padding: 10px;
+  font-size: 12px;
+}
+
+
+
+#dropdownBtn:focus {
+  border: none !important;
+  outline: none !important;
+}
+
+.menu a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  width: 100%;
+  color: #111;
+  font-family: 'Guardian-EgypTT', sans-serif;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.recommended:hover, .newest:hover {
+  background-color: #eee;
+  transition: .3s;
+}
+
+i {
+  margin-left: 10px;
+  vertical-align: top;
+}
+
+/* Dependent on state */
+.backgroundStyle {
+  border: 1px solid rgba(44, 44, 44, 0.178);
+  box-shadow: 0 4px 20px rgba(34, 34, 34, 0.15);
+  transition: .3s;
+}
+
+.removeBackground {
+  background-color: transparent;
+  transform: .2s ease-in-out;
+}
+
+.checkmark1 {
+  position: absolute;
+  top: 55px;
+  right: 20px;
+  font-size: 9px;
+}
+
+.checkmark2 {
+  position: absolute;
+  top: 94px;
+  right: 20px;
+  font-size: 9px;
+}
+
+.newest {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.recommended {
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 15px;
 }
