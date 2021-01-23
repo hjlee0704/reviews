@@ -38,7 +38,7 @@ const Pagination = ({
       </ul>
       <ul className="increment-link">
         <li>
-          <a href="!#" id="increment" className={currentPage !== average + 1 ? 'arrows' : 'disabled arrows'} onClick={(incrementPage)}>
+          <a href="!#" id="increment" className={currentPage !== average ? 'arrows' : 'disabled arrows'} onClick={(incrementPage)}>
             <img src="imgs/rightArrow.png" className="arrows" alt="arrow" />
           </a>
         </li>

@@ -52,16 +52,21 @@ class App extends Component {
       .then((response) => {
         const items = response.data;
         const reviews = getRandomItem(items);
+        let newAverage;
 
+        if (reviews.shopReviews.length % reviews.average !== 0) {
+          newAverage = reviews.average + 1;
+        }
         this.setState({
           reviews: reviews.shopReviews,
-          average: reviews.average,
+          average: newAverage || reviews.average,
         });
       });
   }
 
   paginate(e, pageNum) {
     e.preventDefault();
+    console.log(pageNum)
     window.scrollTo(0, 0);
     this.setState({ currentPage: pageNum });
   }

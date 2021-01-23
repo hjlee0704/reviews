@@ -3,10 +3,6 @@
   font-weight: 400;
 }
 
-body {
-  font-family: 'Guardian-EgypTT'
-}
-
 /* SHOP NUMBER ON HEADING */
 div span {
   font-size: 26px;
@@ -140,10 +136,10 @@ li a:link {
   font-family: 'Guardian-EgypTT', sans-serif;
   background-color: #eee;
   border-radius: 15px;
-  padding: 13px;
+  padding: 12px;
   color: #000;
   line-height: .8;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .disabled {
