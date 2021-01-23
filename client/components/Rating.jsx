@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Rating = ({ rating }) => {
   const sources = {
@@ -13,6 +14,14 @@ const Rating = ({ rating }) => {
       <img src={sources[rating.toString()]} alt="" className="rating-stars" />
     </>
   );
+};
+
+Rating.defaultProps = {
+  rating: 5,
+};
+
+Rating.propTypes = {
+  rating: PropTypes.number,
 };
 
 export default Rating;

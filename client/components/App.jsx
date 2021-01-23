@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
-import getRandomItem from '../helpers/helpers.js';
 import ReviewList from './ReviewList';
 import Pagination from './Pagination';
 import Dropdown from './Dropdown';
@@ -43,10 +42,17 @@ class App extends Component {
   }
 
   getReviews() {
+    const getRandomItem = (shopReviewArray) => (
+      shopReviewArray[
+        Math.floor(Math.random() * shopReviewArray.length)
+      ]
+    );
+
     axios.get('/api/reviews')
       .then((response) => {
         const items = response.data;
         const reviews = getRandomItem(items);
+
         this.setState({
           reviews: reviews.shopReviews,
           average: reviews.average,
@@ -75,7 +81,13 @@ class App extends Component {
   }
 
   render() {
-    const { reviews, currentPage, reviewsPerPage, average } = this.state;
+    const {
+      reviews,
+      currentPage,
+      reviewsPerPage,
+      average,
+    } = this.state;
+
     const indexOfLastReview = currentPage * reviewsPerPage;
     const indexOfFirstReview = indexOfLastReview - reviewsPerPage;
     const currentReviews = reviews.slice(indexOfFirstReview, indexOfLastReview);
