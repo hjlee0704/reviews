@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1611261655002" clover="3.2.0">
-  <project timestamp="1611261655002" name="All files">
-    <metrics statements="93" coveredstatements="70" conditionals="12" coveredconditionals="6" methods="30" coveredmethods="18" elements="135" coveredelements="94" complexity="0" loc="93" ncloc="93" packages="3" files="7" classes="7"/>
+<coverage generated="1611360061395" clover="3.2.0">
+  <project timestamp="1611360061395" name="All files">
+    <metrics statements="98" coveredstatements="85" conditionals="20" coveredconditionals="13" methods="31" coveredmethods="24" elements="149" coveredelements="122" complexity="0" loc="98" ncloc="98" packages="3" files="7" classes="7"/>
     <package name="client.components">
-      <metrics statements="70" coveredstatements="48" conditionals="12" coveredconditionals="6" methods="25" coveredmethods="14"/>
+      <metrics statements="75" coveredstatements="62" conditionals="20" coveredconditionals="13" methods="26" coveredmethods="19"/>
       <file name="App.jsx" path="/home/eagerbeaver/hackreactor/immersive/fec/ratings-service/client/components/App.jsx">
-        <metrics statements="34" coveredstatements="21" conditionals="2" coveredconditionals="0" methods="12" coveredmethods="6"/>
+        <metrics statements="37" coveredstatements="28" conditionals="2" coveredconditionals="0" methods="12" coveredmethods="8"/>
         <line num="13" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
         <line num="21" count="1" type="stmt"/>
@@ -13,53 +13,58 @@
         <line num="23" count="1" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
         <line num="25" count="1" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
         <line num="33" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
-        <line num="36" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="37" count="0" type="stmt"/>
+        <line num="35" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
         <line num="39" count="0" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="47" count="1" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
-        <line num="50" count="0" type="stmt"/>
-        <line num="52" count="0" type="stmt"/>
-        <line num="58" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="46" count="2" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="57" count="1" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
         <line num="63" count="0" type="stmt"/>
         <line num="64" count="0" type="stmt"/>
         <line num="68" count="1" type="stmt"/>
         <line num="69" count="1" type="stmt"/>
         <line num="70" count="1" type="stmt"/>
-        <line num="74" count="1" type="stmt"/>
+        <line num="71" count="1" type="stmt"/>
         <line num="75" count="1" type="stmt"/>
         <line num="76" count="1" type="stmt"/>
-        <line num="80" count="3" type="stmt"/>
-        <line num="81" count="3" type="stmt"/>
+        <line num="77" count="1" type="stmt"/>
+        <line num="78" count="1" type="stmt"/>
         <line num="82" count="3" type="stmt"/>
         <line num="83" count="3" type="stmt"/>
+        <line num="84" count="3" type="stmt"/>
         <line num="85" count="3" type="stmt"/>
-        <line num="109" count="1" type="stmt"/>
+        <line num="87" count="3" type="stmt"/>
+        <line num="111" count="1" type="stmt"/>
       </file>
       <file name="Dropdown.jsx" path="/home/eagerbeaver/hackreactor/immersive/fec/ratings-service/client/components/Dropdown.jsx">
-        <metrics statements="17" coveredstatements="14" conditionals="4" coveredconditionals="4" methods="7" coveredmethods="6"/>
+        <metrics statements="19" coveredstatements="19" conditionals="12" coveredconditionals="11" methods="8" coveredmethods="8"/>
         <line num="6" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
-        <line num="38" count="3" type="stmt"/>
-        <line num="40" count="3" type="stmt"/>
-        <line num="67" count="2" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="45" count="4" type="stmt"/>
+        <line num="46" count="4" type="stmt"/>
+        <line num="51" count="4" type="stmt"/>
+        <line num="78" count="2" type="stmt"/>
       </file>
       <file name="Pagination.jsx" path="/home/eagerbeaver/hackreactor/immersive/fec/ratings-service/client/components/Pagination.jsx">
         <metrics statements="10" coveredstatements="7" conditionals="6" coveredconditionals="2" methods="3" coveredmethods="1"/>
@@ -75,10 +80,10 @@
         <line num="57" count="2" type="stmt"/>
       </file>
       <file name="Rating.jsx" path="/home/eagerbeaver/hackreactor/immersive/fec/ratings-service/client/components/Rating.jsx">
-        <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
       </file>
       <file name="ReviewList.jsx" path="/home/eagerbeaver/hackreactor/immersive/fec/ratings-service/client/components/ReviewList.jsx">
         <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
@@ -91,11 +96,11 @@
       </file>
     </package>
     <package name="client.helpers">
-      <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="helpers.js" path="/home/eagerbeaver/hackreactor/immersive/fec/ratings-service/client/helpers/helpers.js">
-        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="2" count="0" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
       </file>
     </package>
@@ -108,7 +113,7 @@
         <line num="4" count="100" type="stmt"/>
         <line num="5" count="100" type="stmt"/>
         <line num="6" count="100" type="stmt"/>
-        <line num="7" count="2316" type="stmt"/>
+        <line num="7" count="2229" type="stmt"/>
         <line num="20" count="100" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
         <line num="24" count="100" type="stmt"/>

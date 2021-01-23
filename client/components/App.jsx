@@ -46,8 +46,8 @@ class App extends Component {
     axios.get('/api/reviews')
       .then((response) => {
         const items = response.data;
+        console.log(response.data)
         const reviews = getRandomItem(items);
-
         this.setState({
           reviews: reviews.shopReviews,
           average: reviews.average,

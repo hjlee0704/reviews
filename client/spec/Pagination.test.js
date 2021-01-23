@@ -13,6 +13,7 @@ const props = {
 const wrapper = shallow((<Pagination {...props} />));
 const incrementBtn = wrapper.find('#increment');
 const decrementBtn = wrapper.find('#decrement');
+const paginateBtn = wrapper.find('#paginate');
 
 describe('Behavior of buttons on Pagination component...', () => {
   test('Should call all onClicks', () => {
@@ -21,5 +22,7 @@ describe('Behavior of buttons on Pagination component...', () => {
     expect(props.incrementPage).toHaveBeenCalled();
     decrementBtn.simulate('click');
     expect(props.decrementPage).toHaveBeenCalled();
+    paginateBtn.simulate('click');
+    expect(props.paginate).toHaveBeenCalled();
   });
 });
