@@ -12,7 +12,6 @@ const props = {
 
 const wrapper = shallow(<Dropdown {...props} />);
 const wrapperInstance = wrapper.instance();
-console.log(wrapper.debug());
 
 describe('Behavior of buttons on Dropdown component...', () => {
   test('Check to see if menu is open', () => {

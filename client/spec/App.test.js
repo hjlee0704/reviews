@@ -5,11 +5,9 @@ import React from 'react';
 
 import App from '../components/App';
 
-// const flushPromises = () => new Promise((resolve) => setImmediate(resolve));
 const wrapper = shallow(<App />);
 const wrapperInstance = wrapper.instance();
 const e = { preventDefault: jest.fn() };
-// jest.mock('axios');
 
 describe('App testing...', () => {
   test('matches snapshot', () => {
@@ -53,7 +51,7 @@ describe('App testing...', () => {
     };
 
     const getSpySuccess = jest.spyOn(axios, 'get')
-      .mockResolvedValueOnce(resp)
+      .mockResolvedValueOnce(resp);
     await wrapper.instance().componentDidMount();
     expect(getSpySuccess).toHaveBeenCalledTimes(1);
   });
