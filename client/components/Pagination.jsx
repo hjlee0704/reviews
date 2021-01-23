@@ -28,8 +28,7 @@ const Pagination = ({
     <div className="pages-container">
       <ul>
         <li>
-          <a href="!#" id="decrement" className={currentPage !== 1 ? 'arrows' : 'disabled'} onClick={decrementPage}>
-            <span className="left-arrow" />
+          <a href="!#" id="decrement" className={currentPage !== 1 ? 'arrows' : 'disabled arrows'} onClick={decrementPage}>
             <img src="imgs/leftArrow.png" className="arrows" alt="arrow" />
           </a>
         </li>
@@ -39,7 +38,7 @@ const Pagination = ({
       </ul>
       <ul className="increment-link">
         <li>
-          <a href="!#" id="increment" className={currentPage !== average + 1 ? 'arrows' : 'disabled'} onClick={(incrementPage)}>
+          <a href="!#" id="increment" className={currentPage !== average + 1 ? 'arrows' : 'disabled arrows'} onClick={(incrementPage)}>
             <img src="imgs/rightArrow.png" className="arrows" alt="arrow" />
           </a>
         </li>
