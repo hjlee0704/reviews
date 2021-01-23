@@ -1,10 +1,5 @@
-* {
-  box-sizing: border-box;
-  font-weight: 400;
-}
-
 /* SHOP NUMBER ON HEADING */
-div span {
+.main-container span {
   font-size: 26px;
   font-weight: 400;
   color: #111111;
@@ -106,7 +101,7 @@ div span {
   width: 50%;
 }
 
-ul {
+.unordered-list {
   list-style-type: none;
   margin-left: 400px;
 }
@@ -115,7 +110,7 @@ ul {
 /* PAGINATION SECTION */
 
 /* PAGINATE ANCHOR LINKS */
-li a:link {
+.list-item a:link {
   text-decoration: none;
   float: left;
   margin-bottom: 10px;
@@ -230,7 +225,7 @@ li a:link {
   transition: .3s;
 }
 
-i {
+.fas {
   margin-left: 10px;
   vertical-align: top;
 }
