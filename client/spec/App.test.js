@@ -55,4 +55,16 @@ describe('App testing...', () => {
     await wrapper.instance().componentDidMount();
     expect(getSpySuccess).toHaveBeenCalledTimes(1);
   });
+
+  test('Should invoke componentDidMount()', () => {
+    jest.spyOn(wrapperInstance, 'getReviews');
+    wrapperInstance.componentDidMount();
+    expect(wrapperInstance.getReviews).toHaveBeenCalledTimes(1);
+  });
+
+  test('Should call onSortReviews function', async () => {
+    jest.spyOn(wrapperInstance, 'onSortReviews');
+    wrapperInstance.onSortReviews();
+    expect(wrapperInstance.onSortReviews).toHaveBeenCalledTimes(1);
+  });
 });

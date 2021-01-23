@@ -51,9 +51,6 @@ class App extends Component {
           reviews: reviews.shopReviews,
           average: reviews.average,
         });
-      })
-      .catch((error) => {
-        console.log(error.response.data);
       });
   }
 

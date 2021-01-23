@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReviewList testing... Renders an avatar image 1`] = `
+<div
+  className="reviewList-container"
+>
+  <div
+    className="reviews-container"
+    key="1"
+  >
+    <img
+      alt="http://www.dummy.com"
+      src="avatar url string"
+    />
+    <a
+      className="customer-name"
+      href="http://dummy.com"
+    />
+    <span>
+      Dec 31, 1969
+    </span>
+    <Rating
+      rating={5}
+    />
+    <div
+      className="description-container"
+    >
+      <p>
+        review description
+      </p>
+    </div>
+    <img
+      alt="http://www.dummy.com"
+      src="image url"
+    />
+    <p
+      id="purchased"
+    >
+      Purchased Item:
+    </p>
+    <img
+      alt="http://www.dummy.com"
+      className="purchased-img"
+      src="shop image url"
+    />
+    <a
+      className="customer-name"
+      href="http://dummy.com"
+    />
+  </div>
+</div>
+`;

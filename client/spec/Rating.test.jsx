@@ -13,7 +13,6 @@ const sources = {
 };
 
 const wrapper = shallow(<Rating rating={src.rating} />);
-console.log(wrapper.debug());
 
 describe('Dropdown testing component', () => {
   test('renders an image tag', () => {
