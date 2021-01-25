@@ -17,7 +17,7 @@ exports[`ReviewList testing... Renders an avatar image 1`] = `
       href="http://dummy.com"
     />
     <span>
-      Dec 31, 1969
+      Invalid date
     </span>
     <Rating
       rating={5}

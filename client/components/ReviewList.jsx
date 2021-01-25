@@ -7,7 +7,7 @@ import Rating from './Rating';
 
 const ReviewList = ({ reviews }) => {
   const reviewList = reviews.map((review) => {
-    const dateString = review._id;
+    const dateString = review.date;
     const dateObj = new Date(dateString);
     const momentObj = moment(dateObj);
     const momentString = momentObj.format('ll');
