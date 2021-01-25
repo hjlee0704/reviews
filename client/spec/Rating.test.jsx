@@ -5,7 +5,7 @@ import toJSON from 'enzyme-to-json';
 import Rating from '../components/Rating';
 
 const src = {
-  rating: '1',
+  rating: 1,
 };
 
 const sources = {

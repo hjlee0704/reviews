@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose --collectCoverage --updateSnapshot",
+    "test": "jest --verbose --collectCoverage",
     "start": "nodemon server/index.js",
     "watch": "webpack",
     "seed": "node database/seed.js"
