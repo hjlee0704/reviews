@@ -17,8 +17,8 @@ const reviews = [
   },
 ];
 
-const wrapper = shallow(<ReviewList reviews={reviews}/>);
-console.log(wrapper.debug())
+const wrapper = shallow(<ReviewList reviews={reviews} />);
+
 describe('ReviewList testing...', () => {
   test('Renders a div', () => {
     const actual = shallow(<ReviewList reviews={[]} />);
@@ -27,7 +27,6 @@ describe('ReviewList testing...', () => {
   });
 
   test('Renders an avatar image', () => {
-    // expect(wrapper.contains(<img src={reviews[0].avatar} alt="" className="rating-stars" />)).toBe(true);
     expect(toJSON(wrapper)).toMatchSnapshot();
   });
 });

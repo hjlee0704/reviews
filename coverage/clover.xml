@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1611597172971" clover="3.2.0">
-  <project timestamp="1611597172971" name="All files">
+<coverage generated="1611597456262" clover="3.2.0">
+  <project timestamp="1611597456262" name="All files">
     <metrics statements="104" coveredstatements="97" conditionals="24" coveredconditionals="15" methods="30" coveredmethods="27" elements="158" coveredelements="139" complexity="0" loc="104" ncloc="104" packages="2" files="6" classes="6"/>
     <package name="client.components">
       <metrics statements="84" coveredstatements="77" conditionals="24" coveredconditionals="15" methods="26" coveredmethods="23"/>
@@ -113,7 +113,7 @@
         <line num="4" count="100" type="stmt"/>
         <line num="5" count="100" type="stmt"/>
         <line num="6" count="100" type="stmt"/>
-        <line num="7" count="2219" type="stmt"/>
+        <line num="7" count="2276" type="stmt"/>
         <line num="20" count="100" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
         <line num="24" count="100" type="stmt"/>
