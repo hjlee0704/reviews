@@ -16,9 +16,6 @@ module.exports = {
           // [css-loader](/loaders/css-loader)
           {
             loader: 'css-loader',
-            options: {
-              modules: true
-            }
           },
         ]
       },
