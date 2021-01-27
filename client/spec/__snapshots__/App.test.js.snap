@@ -1,38 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App testing... matches snapshot 1`] = `
-<div
-  className="main-container"
->
-  <span>
-    0
-    <span
-      id="heading"
-    >
-      shop reviews
-    </span>
-  </span>
-  <Dropdown
-    onSortReviews={[Function]}
-    reviews={Array []}
-  />
-  <ReviewList
-    reviews={Array []}
-  />
-  <div>
-    <Pagination
-      average={null}
-      currentPage={1}
-      decrementPage={[Function]}
-      incrementPage={[Function]}
-      paginate={[Function]}
-      reviewsPerPage={4}
-      totalReviews={0}
-    />
-  </div>
-</div>
-`;
-
 exports[`Reviews testing... matches snapshot 1`] = `
 <div
   className="main-container"
