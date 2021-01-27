@@ -9,6 +9,17 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        use: [
+          // [style-loader](/loaders/style-loader)
+          { loader: 'style-loader' },
+          // [css-loader](/loaders/css-loader)
+          {
+            loader: 'css-loader',
+          },
+        ]
+      },
+      {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules)/,
         use: {
@@ -29,3 +40,5 @@ module.exports = {
   },
   watch: true,
 };
+
+

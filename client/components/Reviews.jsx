@@ -46,7 +46,7 @@ class Reviews extends Component {
       .then((response) => {
         const reviews = response.data;
         let newAverage;
-
+        console.log(reviews)
         if (reviews.shopReviews.length % reviews.average !== 0) {
           newAverage = reviews.average + 1;
         }
