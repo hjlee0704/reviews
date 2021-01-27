@@ -3,13 +3,13 @@ import toJSON from 'enzyme-to-json';
 import axios from 'axios';
 import React from 'react';
 
-import App from '../components/App';
+import Reviews from '../components/Reviews';
 
-const wrapper = shallow(<App />);
+const wrapper = shallow(<Reviews />);
 const wrapperInstance = wrapper.instance();
 const e = { preventDefault: jest.fn() };
 
-describe('App testing...', () => {
+describe('Reviews testing...', () => {
   test('matches snapshot', () => {
     expect(toJSON(wrapper)).toMatchSnapshot();
   });

@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   entry: './client/index.jsx',
   output: {
-    filename: 'app.js',
+    filename: 'reviews.js',
     path: path.resolve(__dirname, 'public'),
   },
   module: {

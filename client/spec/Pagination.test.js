@@ -3,7 +3,6 @@
 import { shallow, mount } from 'enzyme';
 import React from 'react';
 import Pagination from '../components/Pagination';
-import App from '../components/App';
 
 const props = {
   decrementPage: jest.fn(),

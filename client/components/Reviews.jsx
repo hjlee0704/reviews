@@ -7,7 +7,7 @@ import ReviewList from './ReviewList';
 import Pagination from './Pagination';
 import Dropdown from './Dropdown';
 
-class App extends Component {
+class Reviews extends Component {
   constructor(props) {
     super(props);
 
@@ -42,16 +42,9 @@ class App extends Component {
   }
 
   getReviews() {
-    const getRandomItem = (shopReviewArray) => (
-      shopReviewArray[
-        Math.floor(Math.random() * shopReviewArray.length)
-      ]
-    );
-
     axios.get('/api/reviews')
       .then((response) => {
-        const items = response.data;
-        const reviews = getRandomItem(items);
+        const reviews = response.data;
         let newAverage;
 
         if (reviews.shopReviews.length % reviews.average !== 0) {
@@ -121,8 +114,8 @@ class App extends Component {
   }
 }
 
-App.defaultProps = {
+Reviews.defaultProps = {
   reviews: PropTypes.string,
 };
 
-export default App;
+export default Reviews;
