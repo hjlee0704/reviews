@@ -17,7 +17,7 @@ const reviews = [
   },
 ];
 
-const wrapper = shallow(<ReviewList reviews={reviews} />);
+const wrapper = shallow(<ReviewList reviews={reviews}/>);
 
 describe('ReviewList testing...', () => {
   test('Renders a div', () => {
