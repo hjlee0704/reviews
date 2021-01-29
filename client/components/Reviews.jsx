@@ -35,18 +35,18 @@ class Reviews extends Component {
       sorted = reviews.sort((a, b) => new Date(b.date) - new Date(a.date));
     } else {
       sorted = reviews.sort((a, b) => b.recommended - a.recommended);
-      console.log(sorted);
     }
 
     this.setState({ reviews: sorted, currentPage: 1 });
   }
 
   getReviews() {
-    axios.get('/api/reviews')
+    const randomNum = Math.floor(Math.random() * (30 - 15 + 1) + 15);
+
+    axios.get(`/api/reviews/${randomNum}`)
       .then((response) => {
         const reviews = response.data;
         let newAverage;
-        console.log(reviews)
         if (reviews.shopReviews.length % reviews.average !== 0) {
           newAverage = reviews.average + 1;
         }
@@ -59,7 +59,6 @@ class Reviews extends Component {
 
   paginate(e, pageNum) {
     e.preventDefault();
-    console.log(pageNum)
     window.scrollTo(0, 0);
     this.setState({ currentPage: pageNum });
   }

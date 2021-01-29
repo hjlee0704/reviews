@@ -11,10 +11,10 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
 
-app.get('/api/reviews', (req, res) => {
+app.get('/api/reviews/:id', (req, res) => {
   console.log('Getting reviews.....');
-
-  Review.findById(0, (err, docs) => {
+  console.log(req.params)
+  Review.findById(req.params.id, (err, docs) => {
     if (err) {
       console.log(err);
       res.sendStatus(500);
