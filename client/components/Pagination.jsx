@@ -29,7 +29,7 @@ const Pagination = ({
       <ul className="unordered-list">
         <li className="list-item">
           <a href="!#" id="decrement" className={currentPage !== 1 ? 'arrows' : 'disabled arrows'} onClick={decrementPage}>
-            <img src="imgs/leftArrow.png" className="arrows" alt="arrow" />
+            <img src="https://proxy-imgs.s3-us-west-1.amazonaws.com/leftArrow.png" className="arrows" alt="arrow" />
           </a>
         </li>
       </ul>
@@ -39,7 +39,7 @@ const Pagination = ({
       <ul className="increment-link unordered-list">
         <li className="list-item">
           <a href="!#" id="increment" className={currentPage !== average ? 'arrows' : 'disabled arrows'} onClick={(incrementPage)}>
-            <img src="imgs/rightArrow.png" className="arrows" alt="arrow" />
+            <img src="https://proxy-imgs.s3-us-west-1.amazonaws.com/rightArrow.png" className="arrows" alt="arrow" />
           </a>
         </li>
       </ul>

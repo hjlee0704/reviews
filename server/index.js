@@ -13,7 +13,6 @@ app.use(express.static('public'));
 
 app.get('/api/reviews/:id', (req, res) => {
   console.log('Getting reviews.....');
-  console.log(req.params)
   Review.findById(req.params.id, (err, docs) => {
     if (err) {
       console.log(err);
