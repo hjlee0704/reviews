@@ -59,20 +59,23 @@ class Reviews extends Component {
 
   paginate(e, pageNum) {
     e.preventDefault();
-    window.scrollTo(0, 0);
+    var heading = document.getElementById('heading');
+    heading.scrollIntoView();
     this.setState({ currentPage: pageNum });
   }
 
   incrementPage(e) {
     e.preventDefault();
-    window.scrollTo(0, 0);
+    var heading = document.getElementById('heading');
+    heading.scrollIntoView();
     const { currentPage } = this.state;
     this.setState({ currentPage: currentPage + 1 });
   }
 
   decrementPage(e) {
     e.preventDefault();
-    window.scrollTo(0, 0);
+    var heading = document.getElementById('heading');
+    heading.scrollIntoView();
     const { currentPage } = this.state;
     this.setState({ currentPage: currentPage - 1 });
   }

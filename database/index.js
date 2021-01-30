@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 const db = mongoose
-  .connect('mongodb://database/reviewDB', { useUnifiedTopology: true, useNewUrlParser: true })
+  .connect('mongodb://localhost/reviewDB', { useUnifiedTopology: true, useNewUrlParser: true })
   .then(() => console.log('Successfully connected to mongodb database on port 27017'))
   .catch((err) => console.log(err));
 

@@ -1,12 +1,19 @@
+/* CONTAINER FOR WHOLE COMPONENT */
+#reviews {
+  margin-top: 75px;
+  max-width: 100%;
+}
+
 /* SHOP NUMBER ON HEADING */
 .main-container span {
   font-size: 26px;
   font-weight: 400;
   color: #111111;
+  margin-left: 15px;
 }
 
 #heading {
-  margin-left: 10px;
+  margin-left: 25px;
   font-size: 28px;
   font-weight: 300;
   color: #111111;
@@ -24,6 +31,10 @@
   padding-top: 20px;
   position: relative;
   margin-bottom: 50px;
+}
+
+.reviewList-container {
+  margin-left: 25px;
 }
 
 /* AVATAR IMAGE */
@@ -72,7 +83,7 @@
 .reviews-container img:nth-child(6) {
   position: absolute;
   top: 140px;
-  left: 500px;
+  left: 435px;
   margin-left: 150px;
   width: 170px;
   height: 173px;
@@ -173,10 +184,10 @@
 .dropdown-container {
   position: absolute;
   border-radius: 15px;
-  width: 9.5%;
+  width: 200px;
   top: 15px;
-  left: 650px;
-  z-index: 999;
+  left: 570px;
+  z-index: 600;
   padding: 7px;
   padding-bottom: 1px;
   padding-top: 0;
@@ -184,6 +195,7 @@
 }
 
 #dropdownBtn {
+  width: 200px;
   border: none;
   border-radius: 25px;
   background-color: transparent;
