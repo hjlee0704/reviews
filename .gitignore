@@ -1,5 +1,5 @@
 node_modules
 
-sdc/database/generated
+sdc/database/generated/*
 
 
