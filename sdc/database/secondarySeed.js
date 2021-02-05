@@ -8,17 +8,17 @@ const file = fs.createWriteStream(`${filePath}/secondary.txt`);
 
 const getAvatar = () => {
   const randomImg = Math.floor(Math.random() * 8);
-  return `https://review-budle.s3-us-west-2.amazonaws.com/Archive/${randomImg}.jpg`;
+  return `https://d1sa5mhlkaaod3.cloudfront.net/Archive//Archive/${randomImg}.jpg`;
 };
 
 const getImageUrl = () => {
   const randomImg = Math.floor(Math.random() * 998) + 1;
-  return `https://sdc-review.s3-us-west-2.amazonaws.com/SDC/images/image${randomImg}.jpg`;
+  return `https://d20osmzbr4jjn3.cloudfront.net/SDC/images/image${randomImg}.jpg`;
 };
 
 const getShopImage = () => {
   const randomImg = Math.floor(Math.random() * 998) + 1;
-  return `https://sdc-review.s3-us-west-2.amazonaws.com/SDC/images/image${randomImg}.jpg`;
+  return `https://d20osmzbr4jjn3.cloudfront.net/SDC/images/image${randomImg}.jpg`;
 };
 
 const getRandomNum = () => Math.floor(Math.random() * 9) + 5;
