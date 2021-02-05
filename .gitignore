@@ -1,1 +1,5 @@
 node_modules
+
+sdc/database/primary.csv
+sdc/database/secondary.txt
+

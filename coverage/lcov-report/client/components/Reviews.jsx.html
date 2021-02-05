@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">82.5% </span>
+                <span class="strong">73.17% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>33/40</span>
+                <span class='fraction'>30/41</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.84% </span>
+                <span class="strong">76.92% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>33/38</span>
+                <span class='fraction'>30/39</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -178,7 +178,9 @@
 <a name='L119'></a><a href='#L119'>119</a>
 <a name='L120'></a><a href='#L120'>120</a>
 <a name='L121'></a><a href='#L121'>121</a>
-<a name='L122'></a><a href='#L122'>122</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -215,7 +217,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -224,9 +225,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -248,14 +250,16 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -264,13 +268,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -336,18 +340,18 @@ class Reviews extends Component {
 <span class="cstat-no" title="statement not covered" >      sorted = reviews.sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >new Date(b.date) - new Date(a.date))</span>;</span>
     } else {
       sorted = reviews.sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >b.recommended - a.recommended)</span>;
-      console.log(sorted);
     }
 &nbsp;
     this.setState({ reviews: sorted, currentPage: 1 });
   }
 &nbsp;
   getReviews() {
-    axios.get('/api/reviews')
+    const randomNum = Math.floor(Math.random() * (30 - 15 + 1) + 15);
+&nbsp;
+    axios.get(`/api/reviews/${randomNum}`)
       .then((response) =&gt; {
         const reviews = response.data;
         let newAverage;
-        console.log(reviews)
         <span class="missing-if-branch" title="else path not taken" >E</span>if (reviews.shopReviews.length % reviews.average !== 0) {
           newAverage = reviews.average + 1;
         }
@@ -360,23 +364,25 @@ class Reviews extends Component {
 &nbsp;
 <span class="fstat-no" title="function not covered" >  pa</span>ginate(e, pageNum) {
 <span class="cstat-no" title="statement not covered" >    e.preventDefault();</span>
-<span class="cstat-no" title="statement not covered" >    console.log(pageNum)</span>
-<span class="cstat-no" title="statement not covered" >    window.scrollTo(0, 0);</span>
+    var heading = <span class="cstat-no" title="statement not covered" >document.getElementById('heading');</span>
+<span class="cstat-no" title="statement not covered" >    heading.scrollIntoView();</span>
 <span class="cstat-no" title="statement not covered" >    this.setState({ currentPage: pageNum });</span>
   }
 &nbsp;
   incrementPage(e) {
     e.preventDefault();
-    window.scrollTo(0, 0);
-    const { currentPage } = this.state;
-    this.setState({ currentPage: currentPage + 1 });
+    var heading = document.getElementById('heading');
+    heading.scrollIntoView();
+    const { currentPage } = <span class="cstat-no" title="statement not covered" >this.state;</span>
+<span class="cstat-no" title="statement not covered" >    this.setState({ currentPage: currentPage + 1 });</span>
   }
 &nbsp;
   decrementPage(e) {
     e.preventDefault();
-    window.scrollTo(0, 0);
-    const { currentPage } = this.state;
-    this.setState({ currentPage: currentPage - 1 });
+    var heading = document.getElementById('heading');
+    heading.scrollIntoView();
+    const { currentPage } = <span class="cstat-no" title="statement not covered" >this.state;</span>
+<span class="cstat-no" title="statement not covered" >    this.setState({ currentPage: currentPage - 1 });</span>
   }
 &nbsp;
   render() {
@@ -427,7 +433,7 @@ export default Reviews;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Jan 27 2021 11:04:14 GMT-0800 (Pacific Standard Time)
+                at Tue Feb 02 2021 15:17:21 GMT-0800 (Pacific Standard Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

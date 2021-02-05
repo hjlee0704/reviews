@@ -59,14 +59,14 @@ class Reviews extends Component {
 
   paginate(e, pageNum) {
     e.preventDefault();
-    var heading = document.getElementById('heading');
+    const heading = document.getElementById('heading');
     heading.scrollIntoView();
     this.setState({ currentPage: pageNum });
   }
 
   incrementPage(e) {
     e.preventDefault();
-    var heading = document.getElementById('heading');
+    const heading = document.getElementById('heading');
     heading.scrollIntoView();
     const { currentPage } = this.state;
     this.setState({ currentPage: currentPage + 1 });
@@ -74,7 +74,7 @@ class Reviews extends Component {
 
   decrementPage(e) {
     e.preventDefault();
-    var heading = document.getElementById('heading');
+    const heading = document.getElementById('heading');
     heading.scrollIntoView();
     const { currentPage } = this.state;
     this.setState({ currentPage: currentPage - 1 });
