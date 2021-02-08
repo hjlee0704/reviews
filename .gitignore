@@ -2,4 +2,6 @@ node_modules
 
 sdc/database/generated/*
 
+backend/newrelic.js
+
 

@@ -95,7 +95,6 @@ class Reviews extends Component {
     return (
       <div className="main-container">
         <span>
-          {reviews.length}
           <span id="heading">shop reviews</span>
         </span>
         <Dropdown reviews={reviews} onSortReviews={this.onSortReviews} />

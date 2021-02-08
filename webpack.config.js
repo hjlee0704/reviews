@@ -17,7 +17,7 @@ module.exports = {
           {
             loader: 'css-loader',
           },
-        ]
+        ],
       },
       {
         test: /\.(js|jsx)$/,

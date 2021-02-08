@@ -22,10 +22,6 @@ const getAverage = (shopReviews) => {
 
 const PUBLIC_DIR = path.resolve(__dirname, '../public');
 //const db = require('./database');
-const sample = {
-  sample: 'hi',
-  ye: 1,
-};
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -39,8 +35,6 @@ app.use(express.static(PUBLIC_DIR));
 
 app.get('/api/reviews/:id', (req, res) => {
   const { id } = req.params;
-
-  // res.send(sample);
   reviews.query(`select * from reviews where product_id = ${id}`,
     (err, data) => {
       if (err) {
@@ -63,7 +57,6 @@ app.get('/api/reviews/:id', (req, res) => {
       });
       getReviews.total = getTotal(getReviews.shopReviews);
       getReviews.average = getAverage(getReviews.shopReviews);
-      console.log(getReviews);
       res.send(getReviews);
     });
 });
