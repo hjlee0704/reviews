@@ -1,8 +1,7 @@
 CREATE DATABASE reviews
 
 CREATE TABLE productId (
-  product_id INT PRIMARY KEY,
-
+  product_id SERIAL UNIQUE PRIMARY KEY
 );
 
 CREATE TABLE reviews (
@@ -14,9 +13,9 @@ CREATE TABLE reviews (
   description VARCHAR(250),
   imageUrl INT,
   recommended INT,
-  purchasedItem VARCHAR(100),
+  purchasedItem VARCHAR(250),
   shopImage INT,
-  product_id INT REFERENCES productid(product_id)
+  product_id INT 
 );
 
 ALTER TABLE "productid" ADD FOREIGN KEY ("product_id") REFERENCES "reviews" ("product_id");
@@ -26,3 +25,4 @@ COPY productid(product_id) from '/Users/anthonylee/hackreactor/SDC/reviews-servi
 
 COPY reviews (review_id, avatar, name, date, rating, description, imageUrl, recommended, purchasedItem, shopImage, product_id) from '/Users/anthonylee/hackreactor/SDC/reviews-service/database/generated/secondary.csv' delimiter ',' CSV HEADER;
 
+create index reviews_productid_ind on reviews('product_id' desc);

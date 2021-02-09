@@ -4,7 +4,7 @@ const path = require('path');
 const faker = require('faker');
 
 const filePath = path.join(__dirname, 'generated');
-const file = fs.createWriteStream(`${filePath}/secondary1.csv`);
+const file = fs.createWriteStream(`${filePath}/secondary2.csv`);
 
 const getAvatar = () => Math.floor(Math.random() * 8);
  // return `https://d1sa5mhlkaaod3.cloudfront.net/Archive/${randomImg}.jpg`;
@@ -18,7 +18,7 @@ const getShopImage = () => Math.floor(Math.random() * 998) + 1;
   //return `https://d20osmzbr4jjn3.cloudfront.net/SDC/images/image${randomImg}.jpg`;
 
 
-const getRandomNum = () => Math.floor(Math.random() * 5) + 1;
+const getRandomNum = () => Math.floor(Math.random() * 9) + 1;
 
 // file.on('error', () => { console.log(error); });
 // let reviewId = 1;
@@ -53,7 +53,7 @@ const getPurchasedItem = () => `${faker.random.words(7)}...`;
 
 file.write('review_id, avatar, name, date, rating, description, imageUrl, recommended, purchasedItem, shopImage,product_id\n', 'utf-8');
 let reviewId = 1;
-for (let review = 1; review < 10000000; review++) {
+for (let review = 1; review < 100; review++) {
   const randomNum = getRandomNum();
   for (let productIdGen = 1; productIdGen < randomNum; productIdGen++) {
     file.write(`${reviewId}, ${getAvatar()}, "${getName()}", ${getDate()}, ${getRating()}, "${getDescription()}", ${getImageUrl()}, ${getRecommended()}, "${getPurchasedItem()}", ${getShopImage()}, ${review}\n`, 'utf-8');

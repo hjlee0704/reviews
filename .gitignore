@@ -1,7 +1,8 @@
 node_modules
 
-sdc/database/generated/*
+sdc/database/generated*
 
-backend/newrelic.js
+backend/newrelic*
 
+public/reviews.js
 
