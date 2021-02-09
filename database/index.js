@@ -1,31 +1,14 @@
-/* eslint-disable no-console */
-const mongoose = require('mongoose');
+const Pool = require('pg').Pool;
 
-const db = mongoose
-  .connect('mongodb://database/reviewDB', { useUnifiedTopology: true, useNewUrlParser: true })
-  .then(() => console.log('Successfully connected to mongodb database on port 27017'))
-  .catch((err) => console.log(err));
-
-const reviewSchema = new mongoose.Schema({
-  _id: Number,
-  shopReviews: [
-    {
-      _id: Number,
-      avatar: String,
-      name: String,
-      date: String,
-      rating: Number,
-      description: String,
-      imageUrl: String,
-      recommended: Number,
-      purchasedItem: String,
-      shopImage: String,
-    },
-  ],
-  total: Number,
-  average: Number,
+const reviews = new Pool({
+  host: '34.214.215.36',
+  user: 'postgres',
+  database: 'reviews',
+  port: '5432',
 });
 
-const Review = mongoose.model('Review', reviewSchema);
+reviews.connect(console.log('connected'));
 
-module.exports = { Review, db };
+module.exports = {
+  reviews,
+};
