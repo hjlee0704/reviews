@@ -1,9 +1,9 @@
 const Pool = require('pg').Pool;
 
 const reviews = new Pool({
-  host: 'ec2-34-214-215-36.us-west-2.compute.amazonaws.com',
-  user: 'postgres',
-  password: 'your-pass',
+  host: '34.214.215.36',
+  user: '..',
+  password: '..',
   database: 'postgres',
   port: '5432',
 });
