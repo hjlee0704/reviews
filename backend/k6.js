@@ -6,7 +6,7 @@ const randomNumber = () => {
   return (Math.floor(Math.random() * Math.floor(10000000)) + 1);
 };
 export default function () {
-  var url = 'http://localhost:3001/api/reviews/' + randomNumber();
+  var url = 'http://ec2-34-221-115-155.us-west-2.compute.amazonaws.com:3001/api/reviews/' + randomNumber();
   var params = {
   };
   check(http.get(url, params), {

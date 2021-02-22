@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --verbose --collectCoverage",
     "start": "node server/index.js",
-    "watch": "webpack",
+    "build": "webpack",
     "seed": "node database/seed.js"
   },
   "repository": {

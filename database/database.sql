@@ -1,7 +1,7 @@
 CREATE DATABASE reviews
 
 CREATE TABLE productId (
-  product_id SERIAL UNIQUE PRIMARY KEY
+  product_id int PRIMARY KEY
 );
 
 CREATE TABLE reviews (
@@ -25,4 +25,4 @@ COPY productid(product_id) from '/Users/anthonylee/hackreactor/SDC/reviews-servi
 
 COPY reviews (review_id, avatar, name, date, rating, description, imageUrl, recommended, purchasedItem, shopImage, product_id) from '/Users/anthonylee/hackreactor/SDC/reviews-service/database/generated/secondary.csv' delimiter ',' CSV HEADER;
 
-create index reviews_productid_ind on reviews('product_id' desc);
+create index reviews_productid_ind on reviews(product_id desc);
